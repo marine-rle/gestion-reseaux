@@ -1,8 +1,5 @@
 @extends('layouts.app')
 
-<?php
- $count = 0;
-?>
 <title>@yield('title', 'Accueil')</title>
 
 @section('content')

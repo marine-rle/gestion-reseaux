@@ -11,19 +11,19 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <title>@yield('title', 'Formation Laravel 10')</title>
+    <title>@yield('title', 'Eval')</title>
 </head>
 
 <body>
     <div class="container">
-        <nav class="pb-5">
+        <nav class="mt-6 ">
             <div>
-                <a href="{{ route('ordinateur.index') }}">{{ __('Listes des ordinateurs') }}</a>
-                <a href="{{ route('serveur.index') }}">{{ __('Listes des serveurs') }}</a>
-                <a href="{{ route('reseau.index') }}">{{ __('Listes des réseaux') }}</a>
+                <a href="{{ route('ordinateur.index') }}" >Listes des ordinateurs</a>
+                <a href="{{ route('serveur.index') }}" >Listes des serveurs</a>
+                <a href="{{ route('reseau.index') }}" >Listes des réseaux</a>
             </div>
             <div>
-
+                {{-- __('Vous naviguez en') }} [{{ session('locale') }}] [{{ App::getLocale()-- }}]
                 {{-- <a href="{{ route('language.change', ['code_iso' => 'fr']) }}">{{ __('French') }}</a> --}}
                 {{-- <a href="{{ route('language.change', ['code_iso' => 'en']) }}">{{ __('English') }}</a> --}}
             </div>
