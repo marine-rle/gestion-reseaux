@@ -19,7 +19,7 @@
                 <table class="table table-bordered" >
                     <td>
                         <ul>
-                            <li>{{  $reseaus->libelle }}</li>
+                            <p>{{  $reseaus->libelle }}</p>
                         </ul>
                     </td>
                 </table>
@@ -34,7 +34,7 @@
                 <table class="table table-bordered" >
                     <td>
                         <ul>
-                            <li>Nombre de serveurs : {{ $reseaus->serveur_count }}</li>
+                            <p>Nombre de serveurs : {{ $reseaus->serveur_count }}</p>
                         </ul>
                     </td>
 
@@ -48,7 +48,7 @@
                 <table class="table table-bordered" >
                     <td>
                         <ul>
-                            <li>Nombre d'ordinateurs : {{ $reseaus->ordinateur_count }}</li>
+                            <p>Nombre d'ordinateurs : {{ $reseaus->ordinateur_count }}</p>
                         </ul>
                     </td>
                 </table>
