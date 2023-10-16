@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-<title>@yield('title', 'Ordinateurs')</title>
+<title>@yield('title', 'Liste des ordinateurs')</title>
 
 @section('content')
 <br><a href="{{ route('ordinateur.create') }}" class="btn btn-primary">Ajouter</a><br/><br/>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-<title>@yield('title', 'Reseaux')</title>
+<title>@yield('title', 'Liste des reseaux')</title>
 
 @section('content')
     <br><a href="{{ route('reseau.create') }}" class="btn btn-primary">Ajouter</a><br><br>

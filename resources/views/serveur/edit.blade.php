@@ -3,6 +3,7 @@
 <title>@yield('title', 'Modifier serveur')</title>
 
 @section('content')
+<br><div class="bg-light border p-3" style="width: 50%; border-radius:10%;">
   <h2>Mise à jour</h2>
   <form action="{{ route('serveur.update', ['serveur' => $serveur->id]) }}" method="post">
 
@@ -12,17 +13,17 @@
     <div>
       <label for="ip">IP</label>
       <input type="number" name="ip" id="ip" required maxlength="75" value="{{ old('ip', $serveur->ip) }}">
-    </div>
+    </div><br>
 
     <div>
       <label for="type">Type</label>
       <input type="text" name="type" id="type" required maxlength="75" value="{{ old('type', $serveur->type) }}">
-    </div>
+    </div><br>
 
     <div>
         <label for="os">OS</label>
         <input type="text" name="os" id="os" required maxlength="75" value="{{ old('os', $serveur->os) }}">
-    </div>
+    </div><br>
 
     <div>
         <label for="reseau">Reseau</label>
@@ -33,7 +34,7 @@
             </option>
           @endforeach
         </select>
-    </div>
+    </div><br>
 
 
     <div>
@@ -41,4 +42,5 @@
     </div>
 
   </form>
+</div>
 @endsection

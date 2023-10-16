@@ -3,26 +3,26 @@
 <title>@yield('title', 'Création réseau')</title>
 
 @section('content')
-</br>
+<br><div class="bg-light border p-3" style="width: 50%; border-radius:10%;">
   <h2>Création</h2>
   <form action="{{ route('reseau.store') }}" method="post">
 
     @csrf
 
     <div>
-        <label for="libelle">Libelle :</label></br>
+        <label for="libelle">Libelle :</label><br>
         <input type="text" name="libelle" id="libelle" required value="{{ old('libelle') }}" maxlength="75" placeholder='libelle'>
-    </div></br>
+    </div><br>
 
     <div>
-        <label for="lan">LAN :</label></br>
+        <label for="lan">LAN :</label><br>
         <input type="text" name="lan" id="lan" required value="{{ old('lan') }}" maxlength="75" placeholder='LAN'>
-    </div></br>
+    </div><br>
 
 
     <div>
 
-        <label for="is_disponible">Disponibilité :</label></br>
+        <label for="is_disponible">Disponibilité :</label><br>
 
         <input type="radio"   value="1" name="is_disponible" id="yes_disponible">
         <label for="yes_disponible">Oui</label>
@@ -30,7 +30,7 @@
         <input type="radio" value="0" name="is_disponible" id="no_disponible">
         <label for="no_disponible">Non</label>
 
-    </div></br>
+    </div><br>
 
 
 
@@ -39,4 +39,5 @@
     </div>
 
   </form>
+</div>
 @endsection

@@ -3,6 +3,8 @@
 <title>@yield('title', 'Modifier reseau')</title>
 
 @section('content')
+
+<br><div class="bg-light border p-3" style="width: 50%; border-radius:10%;">
   <h2>Mise à jour</h2>
 
   <form action="{{ route('reseau.update', ['reseau' => $reseau->id]) }}" method="post">
@@ -13,16 +15,16 @@
     <div>
       <label for="libelle">Libellé</label>
       <input type="text" name="libelle" id="libelle" required maxlength="75" value="{{ old('libelle', $reseau->libelle) }}">
-    </div>
+    </div><br>
 
     <div>
       <label for="lan">LAN</label>
       <input type="text" name="lan" id="lan" required maxlength="75" value="{{ old('lan', $reseau->lan) }}">
-    </div>
+    </div><br>
 
     <div>
 
-        <label for="is_disponible">Disponibilité :</label></br>
+        <label for="is_disponible">Disponibilité :</label><br>
 
         <input type="radio"  value="1" name="is_disponible" id="yes_disponible">
         <label for="yes_disponible">Oui</label>
@@ -30,7 +32,7 @@
         <input type="radio" value="0" name="is_disponible" id="no_disponible">
         <label for="no_disponible">Non</label>
 
-    </div></br>
+    </div><br><br>
 
 
 
@@ -39,4 +41,5 @@
     </div>
 
   </form>
+</div>
 @endsection

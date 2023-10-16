@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-<title>@yield('title', 'Serveurs')</title>
+<title>@yield('title', 'Liste des serveurs')</title>
 
 @section('content')
     <br><a href="{{ route('serveur.create') }}" class="btn btn-primary">Ajouter</a><br><br>
