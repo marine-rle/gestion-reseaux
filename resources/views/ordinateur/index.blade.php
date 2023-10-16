@@ -3,7 +3,7 @@
 <title>@yield('title', 'Ordinateurs')</title>
 
 @section('content')
-<br><a href="{{ route('ordinateur.create') }}" class="btn btn-primary">Ajouter</a><br><br>
+<br><a href="{{ route('ordinateur.create') }}" class="btn btn-primary">Ajouter</a><br/><br/>
 
     @foreach ($ordinateur as $ordinateurs)
     <table class="table table-striped table-bordered">

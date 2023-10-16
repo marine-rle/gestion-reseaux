@@ -18,7 +18,7 @@
             @foreach ($reseau as $reseaus)
                 <table class="table table-bordered" >
                     <td>
-                        <ul><br>
+                        <ul>
                             <li>{{  $reseaus->libelle }}</li>
                         </ul>
                     </td>
@@ -28,24 +28,31 @@
         </td>
 
 
+
         <td>
+            @foreach ($reseau as $reseaus)
+                <table class="table table-bordered" >
+                    <td>
+                        <ul>
+                            <li>Nombre de serveurs : {{ $reseaus->serveur_count }}</li>
+                        </ul>
+                    </td>
 
-            @foreach ($serveur as $serveurs)
-
-               @if ($serveurs->reseau = $reseaus->id)
-                <?php
-                $count = $count + 1
-                ?>
-               @endif
+                </table>
             @endforeach
-            {{$count}}
         </td>
 
 
         <td>
-            <ul>
-                <li>s</li>
-            </ul>
+            @foreach ($reseau as $reseaus)
+                <table class="table table-bordered" >
+                    <td>
+                        <ul>
+                            <li>Nombre d'ordinateurs : {{ $reseaus->ordinateur_count }}</li>
+                        </ul>
+                    </td>
+                </table>
+            @endforeach
         </td>
 
 </table>

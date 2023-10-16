@@ -10,6 +10,14 @@ use Illuminate\Http\Request;
 
 class OrdinateurController extends Controller
 {
+
+    private $repository;
+
+    public function __construct(OrdinateurRepository $repository)
+    {
+        $this->repository = $repository;
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -42,6 +50,7 @@ class OrdinateurController extends Controller
         $ordinateur->reseau = $request->reseau;
 
         $ordinateur->save();
+
         return redirect()->route('ordinateur.index');
     }
 

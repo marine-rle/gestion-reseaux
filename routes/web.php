@@ -38,4 +38,5 @@ Route::resource('reseau', ReseauController::class);
 Route::resource('accueil', AccueilController::class);
 
 
+
 require __DIR__.'/auth.php';

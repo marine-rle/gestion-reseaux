@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Serveur extends Model
 {
     use HasFactory;
+
 }

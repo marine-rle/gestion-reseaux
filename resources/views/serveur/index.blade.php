@@ -3,7 +3,7 @@
 <title>@yield('title', 'Serveurs')</title>
 
 @section('content')
-    <br><a href="{{ route('serveur.create') }}" class="btn btn-primary">Ajouter</a>
+    <br><a href="{{ route('serveur.create') }}" class="btn btn-primary">Ajouter</a><br><br>
 
     @foreach ($serveur as $serveurs)
     <table class="table table-striped table-bordered">
