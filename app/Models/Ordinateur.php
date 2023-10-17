@@ -9,4 +9,14 @@ class Ordinateur extends Model
 {
     use HasFactory;
 
+
+    public function serveur()
+    {
+        return $this->belongsTo(Serveur::class);
+    }
+
+    public function reseau()
+    {
+        return $this->belongsTo(Reseau::class);
+    }
 }

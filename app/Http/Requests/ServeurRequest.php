@@ -11,7 +11,7 @@ class ServeurRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,10 @@ class ServeurRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'ip' => 'required',
+            'type' => 'required',
+            'os' => 'required|email',
+            'reseau' => 'required',
         ];
     }
 }

@@ -11,7 +11,7 @@ class ReseauRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,9 @@ class ReseauRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'libelle' => 'required',
+            'lan' => 'required',
+            'is_disponible' => 'required',
         ];
     }
 }

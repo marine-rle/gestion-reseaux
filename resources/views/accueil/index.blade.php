@@ -41,7 +41,7 @@
                 <table class="table table-bordered" >
                     <td>
                         <ul>
-                            <p>Nombre de serveurs : {{ $reseaus->serveur_count }}</p>
+                            <p>Nombre de serveurs : {{ $reseaus->serveurs_count }}</p>
                         </ul>
                     </td>
 
@@ -55,7 +55,7 @@
                 <table class="table table-bordered" >
                     <td>
                         <ul>
-                            <p>Nombre d'ordinateurs : {{ $reseaus->ordinateur_count }}</p>
+                            <p>Nombre d'ordinateurs : {{ $reseaus->ordinateurs_count }}</p>
                         </ul>
                     </td>
                 </table>
