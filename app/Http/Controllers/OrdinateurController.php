@@ -6,6 +6,7 @@ use App\Http\Repositories\OrdinateurRepository;
 use App\Http\Requests\OrdinateurRequest;
 use App\Models\Ordinateur;
 use App\Models\Reseau;
+use Auth;
 use Illuminate\Http\Request;
 
 class OrdinateurController extends Controller
@@ -23,6 +24,7 @@ class OrdinateurController extends Controller
      */
     public function index()
     {
+
         $ordinateur = Ordinateur::all();
         return view('ordinateur.index', compact('ordinateur'));
 
@@ -33,8 +35,12 @@ class OrdinateurController extends Controller
      */
     public function create()
     {
-        $reseau = Reseau::all();
-        return view('ordinateur.create', compact('reseau'));
+        if (Auth::user()->cant('matiere-create')){
+            $reseau = Reseau::all();
+            return view('ordinateur.create', compact('reseau'));
+        }
+        abort(401);
+
     }
 
     /**
