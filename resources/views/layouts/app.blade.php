@@ -25,8 +25,8 @@
             </div>
             <div>
                 {{ __('Vous naviguez en') }} {{ session('locale') }} [{{ App::getLocale() }}]
-                {{--<a href="{{ route('language.change', ['code_iso' => 'fr']) }}">{{ __('French') }}</a>
-                <a href="{{ route('language.change', ['code_iso' => 'en']) }}">{{ __('English') }}</a>--}}
+                <a href="{{ route('set.locale', 'Français') }}">{{ __('French') }}</a>
+                <a href="{{ route('set.locale', 'English') }}">{{ __('English') }}</a>
             </div>
 
             @auth

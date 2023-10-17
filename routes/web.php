@@ -44,5 +44,11 @@ Route::resource('accueil', AccueilController::class);
 
 //Route::get('language/{code_iso}' ,  [LanguageController::class, 'change'])->name('language.change');
 
+Route::get('set-locale/{locale}', function ($locale) {
+    app()->setLocale($locale);
+    session()->put('locale', $locale);
+    return redirect()->back();
+})->name('set.locale');
+
 require __DIR__.'/auth.php';
 
