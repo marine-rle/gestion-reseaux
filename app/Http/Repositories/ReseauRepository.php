@@ -6,31 +6,27 @@ use App\Models\Reseau;
 
 class ReseauRepository
 {
-    protected $reseau;
-    public function __construct(Reseau $reseau)
-    {
-        $this->reseau = $reseau;
-    }
 
-    private function save(Reseau $reseau, array $inputs)
+
+    public function store($request)
     {
-        $reseau->libelle = $inputs['libelle'];
-        $reseau->lan = $inputs['lan'];
-        $reseau->is_disponible = $inputs['is_disponible'];
+        $reseau = new Reseau();
+        $reseau->libelle = $request->libelle;
+        $reseau->lan = $request->lan;
+        $reseau->is_disponible = $request->is_disponible;
+
         $reseau->save();
-        return $reseau;
     }
 
-    public function store(array $inputs)
+    public function update( $request, $reseau)
     {
-        $reseau = new $this->reseau;
-        return $this->save($reseau, $inputs);
+        $reseau->libelle = $request->libelle;
+        $reseau->lan = $request->lan;
+        $reseau->is_disponible = $request->is_disponible;
+
+        $reseau->save();
     }
 
-    public function update(Reseau $reseau, array $inputs)
-    {
-        return $this->save($reseau, $inputs);
-    }
 
 
 }

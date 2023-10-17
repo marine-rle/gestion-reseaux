@@ -45,3 +45,4 @@ Route::resource('accueil', AccueilController::class);
 //Route::get('language/{code_iso}' ,  [LanguageController::class, 'change'])->name('language.change');
 
 require __DIR__.'/auth.php';
+

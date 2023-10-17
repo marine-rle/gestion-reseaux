@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Auth;
+use Silber\Bouncer\Bouncer;
 
 class OrdinateurRequest extends FormRequest
 {
@@ -12,7 +13,7 @@ class OrdinateurRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        $user = Auth::user();
+        return true;
     }
 
     /**

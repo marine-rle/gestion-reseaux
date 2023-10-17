@@ -6,8 +6,6 @@ use App\Http\Repositories\OrdinateurRepository;
 use App\Http\Requests\OrdinateurRequest;
 use App\Models\Ordinateur;
 use App\Models\Reseau;
-use Auth;
-use Silver\Bouncer\Bouncer;
 use Illuminate\Http\Request;
 
 class OrdinateurController extends Controller
@@ -44,15 +42,7 @@ class OrdinateurController extends Controller
      */
     public function store(Request $request)
     {
-        $ordinateur = new Ordinateur();
-        $ordinateur->num_serie = $request->num_serie;
-        $ordinateur->modele = $request->modele;
-        $ordinateur->marque = $request->marque;
-        $ordinateur->date_service = $request->date_service;
-        $ordinateur->reseau = $request->reseau;
-
-        $ordinateur->save();
-
+        $this->repository->store($request);
         return redirect()->route('ordinateur.index');
     }
 
@@ -69,14 +59,7 @@ class OrdinateurController extends Controller
      */
     public function edit(Ordinateur $ordinateur)
     {
-        $reseau = Reseau::all();
-
-        if(Auth::technicien()->can('matiere-update')){
-            return view('ordinateur.edit', compact('reseau','ordinateur'));
-
-        }
-
-        abort(401);
+        return view('ordinateur.edit', compact('reseau','ordinateur'));
 
     }
 
@@ -86,14 +69,7 @@ class OrdinateurController extends Controller
      */
     public function update(Request $request, Ordinateur $ordinateur)
     {
-        $ordinateur->num_serie = $request->num_serie;
-        $ordinateur->modele = $request->modele;
-        $ordinateur->marque = $request->marque;
-        $ordinateur->date_service = $request->date_service;
-        $ordinateur->reseau = $request->reseau;
-
-        $ordinateur->save();
-
+        $this->repository->update($request, $ordinateur);
         return redirect()->route('ordinateur.index');
     }
 

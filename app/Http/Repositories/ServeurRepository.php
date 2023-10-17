@@ -6,31 +6,28 @@ use App\Models\Serveur;
 
 class ServeurRepository
 {
-    protected $serveur;
-    public function __construct(Serveur $serveur)
-    {
-        $this->serveur = $serveur;
-    }
 
-    private function save(Serveur $serveur, array $inputs)
+
+    public function store( $request)
     {
-        $serveur->ip = $inputs['ip'];
-        $serveur->type = $inputs['type'];
-        $serveur->os = $inputs['os'];
-        $serveur->reseau = $inputs['reseau'];
+
+        $serveur = new Serveur();
+        $serveur->ip = $request->ip;
+        $serveur->type = $request->type;
+        $serveur->os = $request->os;
+        $serveur->reseau = $request->reseau;
+
         $serveur->save();
-        return $serveur;
     }
 
-    public function store(array $inputs)
+    public function update( $request,  $serveur)
     {
-        $serveur = new $this->serveur;
-        return $this->save($serveur, $inputs);
-    }
+        $serveur->ip = $request->ip;
+        $serveur->type = $request->type;
+        $serveur->os = $request->os;
+        $serveur->reseau = $request->reseau;
+        $serveur->save();
 
-    public function update(Serveur $serveur, array $inputs)
-    {
-        return $this->save($serveur, $inputs);
     }
 
 

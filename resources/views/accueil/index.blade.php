@@ -19,7 +19,14 @@
                 <table class="table table-bordered" >
                     <td>
                         <ul>
-                            <p>{{  $reseaus->libelle }}</p>
+
+                                @if ($reseaus->is_disponible == 0)
+                                    <p style="color: red">{{  $reseaus->libelle }}</p>
+
+                                @else
+                                    <p style="color: green">{{  $reseaus->libelle }}</p>
+                                @endif
+
                         </ul>
                     </td>
                 </table>

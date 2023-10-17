@@ -9,6 +9,13 @@ use Illuminate\Http\Request;
 
 class ReseauController extends Controller
 {
+
+    private $repository;
+
+    public function __construct(ReseauRepository $repository)
+    {
+        $this->repository = $repository;
+    }
     /**
      * Display a listing of the resource.
      */
@@ -31,12 +38,7 @@ class ReseauController extends Controller
      */
     public function store(Request $request)
     {
-        $reseau = new Reseau();
-        $reseau->libelle = $request->libelle;
-        $reseau->lan = $request->lan;
-        $reseau->is_disponible = $request->is_disponible;
-
-        $reseau->save();
+        $this->repository->store($request);
         return redirect()->route('reseau.index');
     }
 
@@ -62,12 +64,7 @@ class ReseauController extends Controller
      */
     public function update(Request $request, Reseau $reseau)
     {
-        $reseau->libelle = $request->libelle;
-        $reseau->lan = $request->lan;
-        $reseau->is_disponible = $request->is_disponible;
-
-        $reseau->save();
-
+        $this->repository->update($request, $reseau);
         return redirect()->route('reseau.index');
     }
 

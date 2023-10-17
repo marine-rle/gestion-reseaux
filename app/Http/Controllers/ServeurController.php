@@ -10,6 +10,13 @@ use Illuminate\Http\Request;
 
 class ServeurController extends Controller
 {
+    private $repository;
+
+    public function __construct(ServeurRepository $repository)
+    {
+        $this->repository = $repository;
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -35,14 +42,7 @@ class ServeurController extends Controller
 
     public function store(Request $request)
     {
-
-        $serveur = new Serveur();
-        $serveur->ip = $request->ip;
-        $serveur->type = $request->type;
-        $serveur->os = $request->os;
-        $serveur->reseau = $request->reseau;
-
-        $serveur->save();
+        $this->repository->store($request);
         return redirect()->route('serveur.index');
     }
 
@@ -70,12 +70,7 @@ class ServeurController extends Controller
      */
     public function update(Request $request, Serveur $serveur)
     {
-        $serveur->ip = $request->ip;
-        $serveur->type = $request->type;
-        $serveur->os = $request->os;
-        $serveur->reseau = $request->reseau;
-        $serveur->save();
-
+        $this->repository->update($request, $serveur);
         return redirect()->route('serveur.index');
     }
 

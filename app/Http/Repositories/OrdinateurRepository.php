@@ -6,31 +6,30 @@ use App\Models\Ordinateur;
 
 class OrdinateurRepository
 {
-    protected $ordinateur;
-    public function __construct(Ordinateur $ordinateur)
-    {
-        $this->ordinateur = $ordinateur;
-    }
 
-    private function save(Ordinateur $ordinateur, array $inputs)
+
+    public function store( $request)
     {
-        $ordinateur->num_serie = $inputs['num_serie'];
-        $ordinateur->modele = $inputs['modele'];
-        $ordinateur->marque = $inputs['marque'];
-        $ordinateur->reseau = $inputs['reseau'];
+        $ordinateur = new Ordinateur();
+        $ordinateur->num_serie = $request->num_serie;
+        $ordinateur->modele = $request->modele;
+        $ordinateur->marque = $request->marque;
+        $ordinateur->date_service = $request->date_service;
+        $ordinateur->reseau = $request->reseau;
+
         $ordinateur->save();
-        return $ordinateur;
     }
 
-    public function store(array $inputs)
-    {
-        $ordinateur = new $this->ordinateur;
-        return $this->save($ordinateur, $inputs);
-    }
 
-    public function update(Ordinateur $ordinateur, array $inputs)
+    public function update($request, $ordinateur)
     {
-        return $this->save($ordinateur, $inputs);
+        $ordinateur->num_serie = $request->num_serie;
+        $ordinateur->modele = $request->modele;
+        $ordinateur->marque = $request->marque;
+        $ordinateur->date_service = $request->date_service;
+        $ordinateur->reseau = $request->reseau;
+
+        $ordinateur->save();
     }
 
 
