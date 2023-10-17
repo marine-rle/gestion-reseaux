@@ -6,6 +6,8 @@ use App\Http\Repositories\OrdinateurRepository;
 use App\Http\Requests\OrdinateurRequest;
 use App\Models\Ordinateur;
 use App\Models\Reseau;
+use Auth;
+use Silver\Bouncer\Bouncer;
 use Illuminate\Http\Request;
 
 class OrdinateurController extends Controller
@@ -68,8 +70,16 @@ class OrdinateurController extends Controller
     public function edit(Ordinateur $ordinateur)
     {
         $reseau = Reseau::all();
-        return view('ordinateur.edit', compact('reseau','ordinateur'));
+
+        if(Auth::technicien()->can('matiere-update')){
+            return view('ordinateur.edit', compact('reseau','ordinateur'));
+
+        }
+
+        abort(401);
+
     }
+
 
     /**
      * Update the specified resource in storage.
