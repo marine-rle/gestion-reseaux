@@ -17,6 +17,7 @@ class OrdinateurController extends Controller
     public function __construct(OrdinateurRepository $repository)
     {
         $this->repository = $repository;
+        $this->middleware("technicien", ["only"=> ["create","destroy", "edit"]]);
     }
 
     /**

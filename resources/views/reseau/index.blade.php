@@ -3,7 +3,9 @@
 <title>{{ __('Liste des réseaux')}}</title>
 
 @section('content')
-    <br><a href="{{ route('reseau.create') }}" class="btn btn-primary">{{ __('Ajouter')}}</a><br><br>
+
+<br><a href="{{ route('reseau.create') }}" class="btn btn-primary">{{ __('Ajouter')}}</a><br><br>
+
 
     @foreach ($reseau as $reseaus)
     <table class="table table-striped table-bordered">

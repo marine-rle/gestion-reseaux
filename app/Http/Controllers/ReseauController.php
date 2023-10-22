@@ -15,6 +15,7 @@ class ReseauController extends Controller
     public function __construct(ReseauRepository $repository)
     {
         $this->repository = $repository;
+        $this->middleware("admin", ["only"=> ["create","destroy", "edit"]]);
     }
     /**
      * Display a listing of the resource.

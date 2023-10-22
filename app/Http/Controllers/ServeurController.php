@@ -15,6 +15,7 @@ class ServeurController extends Controller
     public function __construct(ServeurRepository $repository)
     {
         $this->repository = $repository;
+        $this->middleware("technicien", ["only"=> ["create","destroy", "edit"]]);
     }
 
     /**
