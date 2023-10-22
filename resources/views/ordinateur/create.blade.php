@@ -11,7 +11,7 @@
 
         <div>
             <label for="num_serie">{{ __('Numéro de série')}}</label><br>
-            <input type="text" name="num_serie" id="num_serie" required value="{{ old('num_serie') }}" maxlength="75">
+            <input type="number" name="num_serie" id="num_serie" required value="{{ old('num_serie') }}" maxlength="75">
         </div><br>
 
         <div>

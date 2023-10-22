@@ -11,7 +11,7 @@
 
         <div>
             <label for="ip">IP</label><br>
-            <input type="number" name="ip" id="ip" required value="{{ old('ip') }}" maxlength="75">
+            <input type="tel" name="ip" id="ip" required value="{{ old('ip') }}" maxlength="75" pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}.[0-9]{3}">
         </div><br>
 
         <div>
