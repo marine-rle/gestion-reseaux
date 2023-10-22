@@ -18,10 +18,10 @@
     <div class="container">
         <nav>
             <div>
-                <a href="{{ route('accueil.index') }}">{{ __('Accueil')}}</a>
-                <a href="{{ route('ordinateur.index') }}" style="padding: 5px" >{{ trans('Listes des ordinateurs')}}</a>
-                <a href="{{ route('serveur.index') }}" style="padding: 5px">{{ __('Listes des serveurs')}}</a>
-                <a href="{{ route('reseau.index') }}">{{ __('Listes des réseaux')}}</a>
+                <a href="{{ route('accueil.index') }}">{{ __('Accueil') }}</a>
+                <a href="{{ route('ordinateur.index') }}" style="padding: 5px" >{{ __('Listes des ordinateurs') }}</a>
+                <a href="{{ route('serveur.index') }}" style="padding: 5px">{{ __('Listes des serveurs') }}</a>
+                <a href="{{ route('reseau.index') }}">{{ __('Listes des réseaux') }}</a>
 
                 {{ __('| Vous naviguez en') }} {{ session('locale') }} :
                 <a href="{{ route('set.locale', 'Français') }}">{{ __('French') }}</a>

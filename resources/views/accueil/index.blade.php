@@ -7,9 +7,9 @@
 <br><table class="table table-striped table-bordered">
 
     <tr>
-        <th scope="col">Liste des réseaux</th>
-        <th scope="col">Nombres de serveurs</th>
-        <th scope="col">Nombres d'ordinateurs</th>
+        <th scope="col">{{ __('Liste des réseaux') }}</th>
+        <th scope="col">{{ __('Nombres de serveurs') }}</th>
+        <th scope="col">{{ __("Nombres d'ordinateurs")}}</th>
     </tr>
 
 

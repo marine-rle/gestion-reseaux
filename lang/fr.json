@@ -35,5 +35,11 @@
     "Unauthorized": "Non autorisé",
     "Verify Email Address": "Vérifier l'adresse e-mail",
     "Whoops!": "Oups !",
-    "You are receiving this email because we received a password reset request for your account.": "Vous recevez cet e-mail car nous avons reçu une demande de réinitialisation de mot de passe pour votre compte."
+    "You are receiving this email because we received a password reset request for your account.": "Vous recevez cet e-mail car nous avons reçu une demande de réinitialisation de mot de passe pour votre compte.",
+    "Liste des reseaux":"Liste des reseaux",
+    "Number of servers":"Nombres de serveurs",
+    "Number of computers":"Nombres d'ordinateurs",
+    "Server":"Serveur",
+    "Network":"Reseau",
+    "Computer":"Ordinateur"
 }
