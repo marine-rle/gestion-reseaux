@@ -7,8 +7,8 @@
 <br><table class="table table-striped table-bordered">
 
     <tr>
-        <th scope="col">{{ __('Liste des réseaux') }}</th>
-        <th scope="col">{{ __('Nombres de serveurs') }}</th>
+        <th scope="col">{{ __("Liste des réseaux")}}</th>
+        <th scope="col">{{ __("Nombres de serveurs")}}</th>
         <th scope="col">{{ __("Nombres d'ordinateurs")}}</th>
     </tr>
 
@@ -41,7 +41,7 @@
                 <table class="table table-bordered" >
                     <td>
                         <ul>
-                            <p>Nombre de serveurs : {{ $reseaus->serveurs_count }}</p>
+                            <p>{{ __('Nombres de serveurs')}} : {{ $reseaus->serveurs_count }}</p>
                         </ul>
                     </td>
 
@@ -55,7 +55,7 @@
                 <table class="table table-bordered" >
                     <td>
                         <ul>
-                            <p>Nombre d'ordinateurs : {{ $reseaus->ordinateurs_count }}</p>
+                            <p>{{ __("Nombres d'ordinateurs")}} : {{ $reseaus->ordinateurs_count }}</p>
                         </ul>
                     </td>
                 </table>

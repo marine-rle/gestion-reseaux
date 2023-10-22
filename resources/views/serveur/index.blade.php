@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-<title>@yield('title', 'Liste des serveurs')</title>
+<title>{{ __('Liste des serveurs')}}</title>
 
 @section('content')
-    <br><a href="{{ route('serveur.create') }}" class="btn btn-primary">Ajouter</a><br><br>
+    <br><a href="{{ route('serveur.create') }}" class="btn btn-primary">{{ __('Ajouter')}}</a><br><br>
 
     @foreach ($serveur as $serveurs)
     <table class="table table-striped table-bordered">
@@ -12,7 +12,7 @@
                 <li>IP : {{  $serveurs->ip }}</li>
                 <li>Type : {{  $serveurs->type }}</li>
                 <li>OS : {{  $serveurs->os }}</li>
-                <li>Reseau : {{  $serveurs->reseau }}</li>
+                <li>{{ __('Reseau')}} : {{  $serveurs->reseau }}</li>
             </ul>
         </td>
 
@@ -20,10 +20,10 @@
             <form method="POST" action="{{ route('serveur.destroy', ['serveur' => $serveurs->id]) }}">
                 {{ csrf_field() }}
                 {{ method_field('DELETE') }}
-                <button type="submit" class="btn btn-outline-danger btn-xs">Supprimer</button>
+                <button type="submit" class="btn btn-outline-danger btn-xs">{{ _('Supprimer')}}</button>
             </form>
 
-            <a href="{{ route('serveur.edit', ['serveur' => $serveurs->id]) }}" class="btn btn-outline-warning btn-xs">Modifier</a><br><br>
+            <a href="{{ route('serveur.edit', ['serveur' => $serveurs->id]) }}" class="btn btn-outline-warning btn-xs">{{ __('Modifier')}}</a><br><br>
         </td>
     </table>
     @endforeach

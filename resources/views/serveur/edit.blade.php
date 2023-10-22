@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
-<title>@yield('title', 'Modifier serveur')</title>
+<title>{{ __('Modifier un serveur')}}</title>
 
 @section('content')
 <br><div class="bg-light border p-3" style="width: 50%; border-radius:10%;">
-  <h2>Mise à jour</h2>
+  <h2>{{ __('Mise à jour')}}</h2>
   <form action="{{ route('serveur.update', ['serveur' => $serveur->id]) }}" method="post">
 
     @csrf
@@ -26,7 +26,7 @@
     </div><br>
 
     <div>
-        <label for="reseau">Reseau</label>
+        <label for="reseau">{{ _('Reseau')}}</label>
         <select name="reseau" id="reseau">
           @foreach ($reseau as $reseaus)
             <option value="{{ $reseaus->id }}" {{ $reseaus->id == $serveur->reseau ? 'selected' : '' }}>
@@ -38,7 +38,7 @@
 
 
     <div>
-      <input type="submit" value="Valider" class="btn btn-success">
+      <input type="submit" value="{{ __('Valider')}}" class="btn btn-success">
     </div>
 
   </form>

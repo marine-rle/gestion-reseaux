@@ -2,11 +2,13 @@
 
 namespace App\Http\Middleware;
 
+use App;
 use Closure;
 use Illuminate\Http\Request;
+use Session;
 use Symfony\Component\HttpFoundation\Response;
 
-class LanguageMiddleware
+class Localization
 {
     /**
      * Handle an incoming request.
@@ -15,6 +17,13 @@ class LanguageMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
+        if ( Session::has('lang')) {
+
+            App::setLocale(Session::get('lang'));
+
+        }
+
         return $next($request);
+
     }
 }

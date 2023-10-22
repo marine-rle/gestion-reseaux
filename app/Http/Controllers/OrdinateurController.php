@@ -35,11 +35,10 @@ class OrdinateurController extends Controller
      */
     public function create()
     {
-        if (Auth::user()->cant('matiere-create')){
-            $reseau = Reseau::all();
-            return view('ordinateur.create', compact('reseau'));
-        }
-        abort(401);
+
+        $reseau = Reseau::all();
+        return view('ordinateur.create', compact('reseau'));
+
 
     }
 
@@ -65,6 +64,7 @@ class OrdinateurController extends Controller
      */
     public function edit(Ordinateur $ordinateur)
     {
+        $reseau = Reseau::all();
         return view('ordinateur.edit', compact('reseau','ordinateur'));
 
     }

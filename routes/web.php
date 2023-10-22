@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LocalizationController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LanguageController;
@@ -44,11 +45,17 @@ Route::resource('accueil', AccueilController::class);
 
 //Route::get('language/{code_iso}' ,  [LanguageController::class, 'change'])->name('language.change');
 
+/*
 Route::get('set-locale/{locale}', function ($locale) {
     app()->setLocale($locale);
     session()->put('locale', $locale);
     return redirect()->back();
 })->name('set.locale');
+*/
+
+Route::get('locale', [LocalizationController::class, 'getLang'])->name('getlang');
+
+Route::get('locale/{lang}', [LocalizationController::class, 'setLang'])->name('setlang');
 
 require __DIR__.'/auth.php';
 
