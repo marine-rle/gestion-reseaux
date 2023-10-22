@@ -18,10 +18,10 @@
     <div class="container">
         <nav>
             <div>
-                <a href="{{ route('accueil.index') }}">{{ __('Accueil') }}</a>
-                <a href="{{ route('ordinateur.index') }}" style="padding: 5px" >{{ __('Liste des ordinateurs') }}</a>
-                <a href="{{ route('serveur.index') }}" style="padding: 5px">{{ __('Liste des serveurs') }}</a>
-                <a href="{{ route('reseau.index') }}">{{ __('Liste des réseaux') }}</a>
+                <a href="{{ route('accueil.index') }}" style="padding-right: 5px">{{ __('Accueil') }}</a>
+                <a href="{{ route('ordinateur.index') }}" style="padding-right: 5px" >{{ __('Liste des ordinateurs') }}</a>
+                <a href="{{ route('serveur.index') }}" style="padding-right: 5px">{{ __('Liste des serveurs') }}</a>
+                <a href="{{ route('reseau.index') }}">{{ __('Liste des réseaux') }}</a> |
 
                 <a href="locale/en">English</a>
                 <a href="locale/fr">French</a>
@@ -34,12 +34,11 @@
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <input type="submit" value="{{ __('Log Out') }}">
-
-
                 </form>
-
             @endauth
+
         </nav>
+
         @yield('content')
     </div>
 </body>

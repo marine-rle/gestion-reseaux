@@ -20,38 +20,20 @@ use App\Http\Controllers\ReseauController;
 |
 */
 
-/*
-Route::get('/', function () {
-    return redirect()->route('accueil.index');
-});
-*/
-
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/', [AccueilController::class, 'index'])->name('accueil.index');
+
+
+    Route::resource('ordinateur', OrdinateurController::class);
+    Route::resource('serveur', ServeurController::class);
+    Route::resource('reseau', ReseauController::class);
+    Route::resource('accueil', AccueilController::class);
 });
 
-Route::resource('ordinateur', OrdinateurController::class);
-Route::resource('serveur', ServeurController::class);
-Route::resource('reseau', ReseauController::class);
-Route::resource('accueil', AccueilController::class);
-
-//Route::get('language/{code_iso}' ,  [LanguageController::class, 'change'])->name('language.change');
-
-/*
-Route::get('set-locale/{locale}', function ($locale) {
-    app()->setLocale($locale);
-    session()->put('locale', $locale);
-    return redirect()->back();
-})->name('set.locale');
-*/
 
 Route::get('locale', [LocalizationController::class, 'getLang'])->name('getlang');
 
