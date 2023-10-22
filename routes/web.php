@@ -19,6 +19,12 @@ use App\Http\Controllers\ReseauController;
 |
 */
 
+/*
+Route::get('/', function () {
+    return redirect()->route('accueil.index');
+});
+*/
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
