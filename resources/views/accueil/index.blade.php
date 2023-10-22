@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
-<title>@yield('title', 'Accueil')</title>
+<title>{{ __('Accueil')}}</title>
 
 @section('content')
+
 
 <br><table class="table table-striped table-bordered">
 
@@ -41,7 +42,7 @@
                 <table class="table table-bordered" >
                     <td>
                         <ul>
-                            <p>{{ __('Nombres de serveurs')}} : {{ $reseaus->serveurs_count }}</p>
+                            <p>{{ __('Nombres de serveurs')}} :</p>
                         </ul>
                     </td>
 
@@ -55,7 +56,7 @@
                 <table class="table table-bordered" >
                     <td>
                         <ul>
-                            <p>{{ __("Nombres d'ordinateurs")}} : {{ $reseaus->ordinateurs_count }}</p>
+                            <p>{{ __("Nombres d'ordinateurs")}} :</p>
                         </ul>
                     </td>
                 </table>
@@ -63,6 +64,7 @@
         </td>
 
 </table>
+
 
 
 
