@@ -23,8 +23,8 @@
                 <a href="{{ route('serveur.index') }}" style="padding-right: 5px">{{ __('Liste des serveurs') }}</a>
                 <a href="{{ route('reseau.index') }}">{{ __('Liste des réseaux') }}</a> |
 
-                <a href="locale/en">English</a>
-                <a href="locale/fr">French</a>
+                <a href="locale/en">{{ __('English')}}</a>
+                <a href="locale/fr">{{ __('French')}}</a>
             </div>
             <div>
 
