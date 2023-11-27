@@ -43,7 +43,7 @@ $adminRole = Role::where('name','admin')->first();
 $technicienRole = Role::where('name','technicien')->first();
 
 $adminRole->givePermissionTo('admin_task');
-$technicienRole_>givePermissionTo('technicien_task');
+$technicienRole->givePermissionTo('technicien_task');
 ````
 
 
