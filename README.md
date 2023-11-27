@@ -71,5 +71,5 @@ $technicienUser->save();
 ````
 Attribuer les rôles à 'admin' et à 'technicien'
 ````
-$adminUser->asignRole($adminRole);
+$adminUser->assignRole($adminRole);
 $technicienUser->assignRole($technicienRole);
