@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Repositories\OrdinateurRepository;
 use App\Http\Requests\OrdinateurRequest;
+use App\Mail\InfoMail;
 use App\Models\Ordinateur;
 use App\Models\Reseau;
 use Auth;
 use Illuminate\Http\Request;
+use Mail;
 
 class OrdinateurController extends Controller
 {
@@ -77,6 +79,7 @@ class OrdinateurController extends Controller
     public function update(Request $request, Ordinateur $ordinateur)
     {
         $this->repository->update($request, $ordinateur);
+        Mail::to(Auth::user()->email)->send(new InfoMail($ordinateur));
         return redirect()->route('ordinateur.index');
     }
 
