@@ -24,9 +24,9 @@ class OrdinateurRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'num_serie' => 'required',
-            'modele' => 'required',
-            'marque' => 'required|email',
+            'num_serie' => 'required|number|max:75',
+            'modele' => 'required|string|max:75',
+            'marque' => 'required|string|max:75',
             'date_service' => 'required',
             'reseau' => 'required',
         ];
