@@ -14,6 +14,8 @@ class InputText extends Component
     public function __construct($property)
     {
         $this-> property = $property;
+
+        // j
     }
 
     /**
