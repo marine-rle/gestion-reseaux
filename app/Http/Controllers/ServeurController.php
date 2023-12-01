@@ -61,7 +61,6 @@ class ServeurController extends Controller
      */
     public function edit(Serveur $serveur)
     {
-
         $reseau = Reseau::all();
         return view('serveur.edit', compact('reseau','serveur'));
     }

@@ -56,7 +56,6 @@ class ReseauController extends Controller
      */
     public function edit(Reseau $reseau)
     {
-        $reseau = Reseau::all();
         return view('reseau.edit', compact('reseau'));
     }
 

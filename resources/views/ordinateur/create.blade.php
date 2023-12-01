@@ -21,7 +21,7 @@
 
         <div>
             <label for="marque">{{ __('Marque')}}</label><br>
-            <input type="text" name="marque" id="marque" required value="{{ old('marque') }}">
+            <x-input-text property="marque" :required="true" value="{{ old('marque') }}" maxlength="75"/>
 
         </div><br>
 

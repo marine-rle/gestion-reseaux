@@ -11,12 +11,12 @@
 
     <div>
         <label for="libelle">{{ __('Libellé')}} :</label><br>
-        <input type="text" name="libelle" id="libelle" required value="{{ old('libelle') }}" maxlength="75">
+        <x-input-text property="libelle" :required="true" value="{{ old('libelle') }}" maxlength="75"/>
     </div><br>
 
     <div>
         <label for="lan">{{ __('LAN')}} :</label><br>
-        <input type="text" name="lan" id="lan" required value="{{ old('lan') }}" maxlength="75">
+        <x-input-text property="lan" :required="true" value="{{ old('lan') }}" maxlength="75"/>
     </div><br>
 
 

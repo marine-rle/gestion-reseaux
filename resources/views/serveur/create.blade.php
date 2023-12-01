@@ -16,12 +16,12 @@
 
         <div>
             <label for="type">Type</label><br>
-            <input type="text" name="type" id="type" required value="{{ old('type') }}" maxlength="75">
+            <x-input-text property="type" :required="true" value="{{ old('type') }}" maxlength="75"/>
         </div><br>
 
         <div>
             <label for="os">OS</label><br>
-            <input type="text" name="os" id="os" required value="{{ old('os') }}">
+            <x-input-text property="os" :required="true" value="{{ old('os') }}" maxlength="75"/>
         </div><br>
 
 

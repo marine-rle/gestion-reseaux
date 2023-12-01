@@ -16,27 +16,42 @@
 
 <body>
     <div class="container">
-        <nav>
-            <div>
-                <a href="{{ route('accueil.index') }}" style="padding-right: 5px">{{ __('Accueil') }}</a>
-                <a href="{{ route('ordinateur.index') }}" style="padding-right: 5px" >{{ __('Liste des ordinateurs') }}</a>
-                <a href="{{ route('serveur.index') }}" style="padding-right: 5px">{{ __('Liste des serveurs') }}</a>
-                <a href="{{ route('reseau.index') }}">{{ __('Liste des réseaux') }}</a> |
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{{ route('accueil.index') }}">{{ __('Accueil') }}</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('ordinateur.index') }}">{{ __('Liste des ordinateurs') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('serveur.index') }}">{{ __('Liste des serveurs') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('reseau.index') }}">{{ __('Liste des réseaux') }}</a>
+                        </li>
+                    </ul>
 
-                <a href="locale/en">{{ __('English')}}</a>
-                <a href="locale/fr">{{ __('French')}}</a>
+                    <ul class="navbar-nav mt-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="locale/en">{{ __('English')}}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="locale/fr">{{ __('French')}}</a>
+                        </li>
+                        @auth
+                            @csrf
+                            <form method="POST" action="{{ route('logout') }}">
+                                <input class="nav-link" type="submit" value="{{ __('Log Out') }}">
+                            </form>
+                        @endauth
+                    </ul>
+                </div>
             </div>
-            <div>
-
-            </div>
-
-            @auth
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-                    <input type="submit" value="{{ __('Log Out') }}">
-                </form>
-            @endauth
-
         </nav>
 
         @yield('content')
