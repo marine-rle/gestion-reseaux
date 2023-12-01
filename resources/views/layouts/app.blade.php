@@ -44,8 +44,9 @@
                             <a class="nav-link" href="locale/fr">{{ __('French')}}</a>
                         </li>
                         @auth
-                            @csrf
+
                             <form method="POST" action="{{ route('logout') }}">
+                                @csrf
                                 <input class="nav-link" type="submit" value="{{ __('Log Out') }}">
                             </form>
                         @endauth
