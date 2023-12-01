@@ -16,12 +16,13 @@
 
         <div>
             <label for="modele">{{ __('Modèle')}}</label><br>
-            <input type="text" name="modele" id="modele" required value="{{ old('modele') }}" maxlength="75">
+            <x-input-text property="modele" :required="true" value="{{ old('modele') }}" maxlength="75"/>
         </div><br>
 
         <div>
             <label for="marque">{{ __('Marque')}}</label><br>
             <input type="text" name="marque" id="marque" required value="{{ old('marque') }}">
+
         </div><br>
 
         <div>
