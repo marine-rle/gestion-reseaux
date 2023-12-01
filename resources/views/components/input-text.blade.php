@@ -8,6 +8,7 @@
     @error($property)
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
-        {{-- </span> tt --}}
+        </span>
+        {{-- tt --}}
     @enderror
 </div>

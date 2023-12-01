@@ -17,7 +17,6 @@
         <div>
             <label for="modele">{{ __('Modèle')}}</label><br>
             <x-input-text property="modele" :required="true" value="{{ old('modele') }}" maxlength="75"/>
-            {{-- h --}}
         </div><br>
 
         <div>
