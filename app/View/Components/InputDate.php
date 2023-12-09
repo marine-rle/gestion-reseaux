@@ -12,6 +12,7 @@ class InputDate extends Component
      * Create a new component instance.
      */
     public $property;
+    public $entity;
 
     public function __construct($property)
     {

@@ -13,7 +13,7 @@
 
                 <div class="mb-3">
                     <label for="ip" class="form-label">IP</label><br>
-                    <x-input-tel class="form-control" property="ip" :required="true" value="{{ old('ip') }}">
+                    <x-input-tel class="form-control" property="ip" :required="true" value="{{ old('ip') }}"/>
                 </div>
 
                 <div class="mb-3">

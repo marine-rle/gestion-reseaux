@@ -18,6 +18,7 @@ class OrdinateurRepository
         $ordinateur->reseau = $request->reseau;
 
         $ordinateur->save();
+        return $ordinateur;
     }
 
 

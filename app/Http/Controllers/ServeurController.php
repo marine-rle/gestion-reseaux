@@ -4,9 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Http\Repositories\ServeurRepository;
 use App\Http\Requests\SereurRequest;
+use App\Mail\CreateServeurMail;
+use App\Mail\EditServeurMail;
 use App\Models\Serveur;
 use App\Models\Reseau;
 use Illuminate\Http\Request;
+use Mail;
+use Auth;
+use App\Mail\InfoMail;
+
 
 class ServeurController extends Controller
 {
@@ -41,9 +47,10 @@ class ServeurController extends Controller
       Store a newly created resource in storage.
     */
 
-    public function store(Request $request)
+    public function store(Request $request, Serveur $serveur)
     {
-        $this->repository->store($request);
+        $serveur = $this->repository->store($request);
+        Mail::to(Auth::user()->email)->send(new CreateServeurMail($serveur));
         return redirect()->route('serveur.index');
     }
 
@@ -71,6 +78,7 @@ class ServeurController extends Controller
     public function update(Request $request, Serveur $serveur)
     {
         $this->repository->update($request, $serveur);
+        Mail::to(Auth::user()->email)->send(new EditServeurMail($serveur));
         return redirect()->route('serveur.index');
     }
 

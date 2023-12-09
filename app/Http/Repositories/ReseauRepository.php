@@ -6,8 +6,6 @@ use App\Models\Reseau;
 
 class ReseauRepository
 {
-
-
     public function store($request)
     {
         $reseau = new Reseau();
@@ -16,9 +14,11 @@ class ReseauRepository
         $reseau->is_disponible = $request->is_disponible;
 
         $reseau->save();
+
+        return $reseau;
     }
 
-    public function update( $request, $reseau)
+    public function update($request, $reseau)
     {
         $reseau->libelle = $request->libelle;
         $reseau->lan = $request->lan;
@@ -26,7 +26,4 @@ class ReseauRepository
 
         $reseau->save();
     }
-
-
-
 }

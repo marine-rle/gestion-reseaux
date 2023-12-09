@@ -9,4 +9,5 @@
             <strong>{{ $message }}</strong>
         </span>
     @enderror
+    {{$slot}}
 </div>

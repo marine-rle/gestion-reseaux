@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Repositories\OrdinateurRepository;
 use App\Http\Requests\OrdinateurRequest;
+use App\Mail\CreateOrdinateurMail;
+use App\Mail\EditOrdinateurMail;
 use App\Mail\InfoMail;
 use App\Models\Ordinateur;
 use App\Models\Reseau;
@@ -50,7 +52,8 @@ class OrdinateurController extends Controller
      */
     public function store(Request $request)
     {
-        $this->repository->store($request);
+        $ordinateur = $this->repository->store($request);
+        Mail::to(Auth::user()->email)->send(new CreateOrdinateurMail($ordinateur));
         return redirect()->route('ordinateur.index');
     }
 
@@ -79,7 +82,7 @@ class OrdinateurController extends Controller
     public function update(Request $request, Ordinateur $ordinateur)
     {
         $this->repository->update($request, $ordinateur);
-        Mail::to(Auth::user()->email)->send(new InfoMail($ordinateur));
+        Mail::to(Auth::user()->email)->send(new EditOrdinateurMail($ordinateur));
         return redirect()->route('ordinateur.index');
     }
 

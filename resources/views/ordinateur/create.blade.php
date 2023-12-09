@@ -13,22 +13,22 @@
 
                 <div class="mb-3">
                     <label for="num_serie" class="form-label">{{ __('Numéro de série')}}</label>
-                    <x-input-number class="form-control" property="num_serie" :required="true" value="{{ old('num_serie') }}" />
+                    <x-input-number class="form-control" property="num_serie" :required="true"  />
                 </div>
 
                 <div class="mb-3">
                     <label for="modele" class="form-label">{{ __('Modèle')}}</label>
-                    <x-input-text class="form-control" property="modele" :required="true" value="{{ old('modele') }}"/>
+                    <x-input-text class="form-control" property="modele" :required="true"/>
                 </div>
 
                 <div class="mb-3">
                     <label for="marque" class="form-label">{{ __('Marque')}}</label>
-                    <x-input-text class="form-control" property="marque" :required="true" value="{{ old('marque') }}"/>
+                    <x-input-text class="form-control" property="marque" :required="true"/>
                 </div>
 
                 <div class="mb-3">
                     <label for="date_service" class="form-label">{{ __('Date de mise en service')}}</label>
-                    <x-input-date class="form-control" property="date_service" :required="true" value="{{ old('date_service') }}"/>
+                    <x-input-date class="form-control" property="date_service" :required="true""/>
                 </div>
 
                 <div class="mb-3">

@@ -18,6 +18,8 @@ class ServeurRepository
         $serveur->reseau = $request->reseau;
 
         $serveur->save();
+
+        return $serveur;
     }
 
     public function update( $request,  $serveur)

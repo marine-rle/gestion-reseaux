@@ -7,30 +7,30 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
-use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class InfoMail extends Mailable
+class CreateOrdinateurMail extends Mailable
 {
     use Queueable, SerializesModels;
+
     public $ordinateur;
 
     /**
      * Create a new message instance.
      */
-    public function __construct(Ordinateur $ordinateur) { $this->ordinateur = $ordinateur; }
+    public function __construct(Ordinateur $ordinateur) { $this->ordinateur = $ordinateur;}
 
     /**
      * Get the message envelope.
      */
     public function envelope(): Envelope
-{
-    return new Envelope(
-        subject: 'Info Mail',
-    );
-}
-// ncknkc
+    {
+        return new Envelope(
+            subject: "Création d'un Ordinateur",
+        );
+    }
+
 
     /**
      * Get the message content definition.
@@ -38,7 +38,7 @@ class InfoMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'emails.info',
+            view: 'emails.createOrdinateur',
         );
     }
 
