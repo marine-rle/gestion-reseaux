@@ -13,10 +13,12 @@ class InputText extends Component
      */
 
     public $property;
+    public $value;
 
-    public function __construct($property)
+    public function __construct($property, $value = null)
     {
         $this-> property = $property;
+        $this-> value = $value;
     }
 
     /**

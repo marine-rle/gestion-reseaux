@@ -21,7 +21,7 @@ class OrdinateurController extends Controller
     public function __construct(OrdinateurRepository $repository)
     {
         $this->repository = $repository;
-        $this->middleware("technicien", ["only"=> ["create","destroy", "edit"]]);
+        $this->middleware("technicien", ["only"=> ["create", "edit","destroy"]]);
     }
 
     /**
@@ -40,11 +40,8 @@ class OrdinateurController extends Controller
      */
     public function create()
     {
-
         $reseau = Reseau::all();
         return view('ordinateur.create', compact('reseau'));
-
-
     }
 
     /**
@@ -58,14 +55,6 @@ class OrdinateurController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(Ordinateur $ordinateur)
-    {
-        return view('ordinateur.show', compact('ordinateur'));
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
     public function edit(Ordinateur $ordinateur)
@@ -74,7 +63,6 @@ class OrdinateurController extends Controller
         return view('ordinateur.edit', compact('reseau','ordinateur'));
 
     }
-
 
     /**
      * Update the specified resource in storage.

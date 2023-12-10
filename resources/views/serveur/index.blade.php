@@ -4,7 +4,7 @@
 <div class="container">
     <h1>{{ __('Liste des serveurs')}}</h1>
     <br>
-    <a href="{{ route('serveur.create') }}" class="btn btn-primary">{{ __('Ajouter')}}</a>
+        <x-add-button :route="route('serveur.create')" />
     <br><br>
 
     @foreach ($serveur as $serveurs)

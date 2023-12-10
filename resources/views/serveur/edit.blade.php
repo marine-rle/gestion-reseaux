@@ -13,20 +13,18 @@
 
             <div>
                 <label for="ip">IP</label>
-                <input type="tel" name="ip" id="ip" required value="{{ old('ip', $serveur->ip) }}">
+                <x-input-text property="ip" :value="old('ip', $reseau->ip)"/>
 
             </div><br>
 
             <div>
                 <label for="type">Type</label>
-                <input type="text" name="type" id="type" required maxlength="75"
-                    value="{{ old('type', $serveur->type) }}">
+                <x-input-text property="type" :value="old('type', $reseau->type)"/>
             </div><br>
 
             <div>
                 <label for="os">OS</label>
-                <input type="text" name="os" id="os" required maxlength="75"
-                    value="{{ old('os', $serveur->os) }}">
+                <x-input-text property="os" :value="old('os', $reseau->os)"/>
             </div><br>
 
             <div>

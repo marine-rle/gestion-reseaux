@@ -6,16 +6,14 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class InputSelect extends Component
+class InputRadio extends Component
 {
     /**
      * Create a new component instance.
      */
-    public $property;
-
-    public function __construct($property)
+    public function __construct()
     {
-        $this-> property = $property;
+        //
     }
 
     /**
@@ -23,6 +21,6 @@ class InputSelect extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.input-select');
+        return view('components.input-radio');
     }
 }

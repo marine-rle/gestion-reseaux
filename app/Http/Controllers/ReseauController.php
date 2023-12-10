@@ -44,12 +44,6 @@ class ReseauController extends Controller {
         return redirect()->route('reseau.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Reseau $reseau) {
-        return view('reseau.show', compact('reseau'));
-    }
 
     /**
      * Show the form for editing the specified resource.

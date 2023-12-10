@@ -12,9 +12,11 @@ class InputTel extends Component
      * Create a new component instance.
      */
     public $property;
-    public function __construct($property)
+    public $value;
+    public function __construct($property, $value = null)
     {
         $this-> property = $property;
+        $this-> value = $value;
     }
 
     /**

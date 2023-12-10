@@ -54,15 +54,6 @@ class ServeurController extends Controller
         return redirect()->route('serveur.index');
     }
 
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Serveur $serveur)
-    {
-        return view('serveur.show', compact('serveur'));
-    }
-
     /**
      * Show the form for editing the specified resource.
      */

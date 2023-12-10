@@ -14,26 +14,22 @@
 
             <div  class="mb-3">
                 <label for="num_serie" class="form-label">{{ __('Numéro de série') }} </label>
-                <input type="number" name="num_serie" id="num_serie" required maxlength="75"
-                    value="{{ old('num_serie', $ordinateur->num_serie) }}">
+                <x-input-number property="num_serie" :value="old('num_serie', $ordinateur->num_serie)"/>
             </div>
 
             <div class="mb-3">
                 <label for="modele" class="form-label">{{ __('Modèle') }}</label>
-                <input type="text" name="modele" id="modele" required maxlength="75"
-                    value="{{ old('modele', $ordinateur->modele) }}">
+                <x-input-text property="modele" :value="old('modele', $ordinateur->modele)" />
             </div>
 
             <div class="mb-3">
                 <label for="marque" class="form-label">{{ __('Marque') }}</label>
-                <input type="text" name="marque" id="marque" required maxlength="75"
-                    value="{{ old('marque', $ordinateur->marque) }}">
+                <x-input-text property="marque" :value="old('marque', $ordinateur->marque)"/>
             </div>
 
             <div class="mb-3">
                 <label for="date_service" class="form-label">{{ __('Date de mise en service') }}</label>
-                <input type="date" name="date_service" id="date_service" required
-                    value="{{ old('date_service', $ordinateur->date_service) }}">
+                <x-input-date property="date_service" :value="old('date_service', $ordinateur->date_service)" />
             </div>
 
             <div class="mb-3">
