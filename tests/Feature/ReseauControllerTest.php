@@ -55,14 +55,8 @@ class ReseauControllerTest extends TestCase
         // Agir en tant qu'utilisateur administrateur
         $this->actingAs($adminUser);
 
-        // Performing the request to the create method
         $response = $this->get(route('reseau.create'));
-
-        // Asserting that the response status is 200 (OK)
         $response->assertStatus(200);
-
-        // You can also assert other things if needed
-        // For example, you might want to assert that the correct view is returned:
         $response->assertViewIs('reseau.create');
     }
 
@@ -103,7 +97,7 @@ class ReseauControllerTest extends TestCase
         // Accédez à la page d'édition
         $response = $this->get(route('reseau.edit', ['reseau' => $reseau->id]));
 
-        // Assurez-vous que la réponse a un statut 200 (OK)
+        // Assurez-vous que la réponse a un statut 200
         $response->assertStatus(200);
 
         // Assurez-vous que la vue correspond à 'reseau.edit'
@@ -134,9 +128,6 @@ class ReseauControllerTest extends TestCase
 
         // Assurez-vous que la redirection a eu lieu après la mise à jour
         $response->assertRedirect(route('reseau.index'));
-
-        // Vous pouvez également ajouter des assertions supplémentaires si nécessaire
-        // Vérifier que le reseau a été correctement mis à jour dans la base de données, etc.
     }
 
     public function testAdminCanDestroyReseau()

@@ -74,30 +74,26 @@ class OrdinateurControllerTest extends TestCase
         // Authentifier l'utilisateur
         $this->actingAs($technicienUser);
 
-        // Créer une instance de Reseau
         $reseau = Reseau::factory()->create();
 
-        // Effectuer une requête POST pour stocker un nouvel ordinateur avec des données valides
         $response = $this->post(route('ordinateur.store'), [
-            'num_serie' => '123456', // Remplacez '123456' par la valeur réelle du numéro de série
+            'num_serie' => '123456',
             'modele' => 'Modèle',
             'marque' => 'Marque',
-            'date_service' => '2023-12-01',  // Format YYYY-MM-DD
+            'date_service' => '2023-12-01',
             'reseau' => $reseau->id,
-            // Ajoutez d'autres champs requis ici selon votre validation de formulaire
         ]);
 
         // Assurer que la redirection après la création est correcte
         $response->assertRedirect(route('ordinateur.index'));
 
-        // Assurer que l'ordinateur a été correctement stocké dans la base de données
+
         $this->assertDatabaseHas('ordinateurs', [
-            'num_serie' => '123456', // Remplacez '123456' par la valeur réelle du numéro de série
+            'num_serie' => '123456',
             'modele' => 'Modèle',
             'marque' => 'Marque',
-            'date_service' => '2023-12-01',  // Assurez-vous que le format correspond à celui de votre base de données
+            'date_service' => '2023-12-01',
             'reseau' => $reseau->id,
-            // Ajoutez d'autres champs requis ici selon votre validation de formulaire
         ]);
     }
 
