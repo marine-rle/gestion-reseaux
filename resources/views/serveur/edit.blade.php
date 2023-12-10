@@ -13,18 +13,18 @@
 
                 <div class="mb-3">
                     <label for="ip">IP</label>
-                    <x-input-text property="ip" :value="old('ip', $reseau->ip)" />
+                    <x-input-tel property="ip" :value="old('ip', $serveur->ip)" />
 
                 </div>
 
                 <div class="mb-3">
                     <label for="type">Type</label>
-                    <x-input-text property="type" :value="old('type', $reseau->type)" />
+                    <x-input-text property="type" :value="old('type', $serveur->type)" />
                 </div><br>
 
                 <div class="mb-3">
                     <label for="os">OS</label>
-                    <x-input-text property="os" :value="old('os', $reseau->os)" />
+                    <x-input-text property="os" :value="old('os', $serveur->os)" />
                 </div><br>
 
                 <div class="mb-3">
