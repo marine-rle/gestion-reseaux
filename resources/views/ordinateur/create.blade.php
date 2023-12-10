@@ -28,7 +28,7 @@
 
                 <div class="mb-3">
                     <label for="date_service" class="form-label">{{ __('Date de mise en service')}}</label>
-                    <x-input-date class="form-control" property="date_service" :required="true""/>
+                    <x-input-date class="form-control" property="date_service" :required="true"/>
                 </div>
 
                 <div class="mb-3">
